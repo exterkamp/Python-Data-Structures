@@ -1,4 +1,4 @@
-class quicksort:
+class Quicksort:
 
     def recursive_sort(list):
 

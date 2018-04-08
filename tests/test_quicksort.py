@@ -1,5 +1,5 @@
 import unittest
-from sorts.Quicksort import quicksort
+from sorts.Quicksort import Quicksort
 
 
 class test_quicksort_methods(unittest.TestCase):
@@ -9,7 +9,7 @@ class test_quicksort_methods(unittest.TestCase):
     sorted_list = [2, 3, 3, 4, 4, 4, 7, 8, 9, 12, 20, 24, 24, 39, 84, 99]
 
     def simple_test(self):
-        self.assertEqual(quicksort.recursive_sort(self.random_list), self.sorted_list)
+        self.assertEqual(Quicksort.recursive_sort(self.random_list), self.sorted_list)
 
 
 if __name__ == '__main__':
