@@ -11,11 +11,11 @@ class Mergesort:
             right = merge_sort(l[len(l)//2:])
 
             output = merge(left, right)
-            print('->' + str(output))
+            # print('->' + str(output))
             return output
         
         def merge(l1, l2):
-            print(l1,l2)
+            # print(l1,l2)
             res = []
 
             while l1 and l2:
