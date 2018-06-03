@@ -17,3 +17,15 @@ Some test cases have been provided.  But they are not comprehensive.
 
 ### Data Structures
 * [LRU Cache](structures/LruCache.py)
+
+### Algorithms
+
+Different algorithmic programs.  Grouped by general topic.
+
+#### Bitwise Algorithms
+* [Hamming Distance](algorithms/bitwise/operations.py)
+* [Hamming Weight](algorithms/bitwise/operations.py)
+
+#### Mathematical Algortihms
+* [Fibonacci](algorithms/math/fibonacci.py)
+* [Factorial](algorithms/math/factorial.py)
