@@ -5,7 +5,11 @@ from algorithms.math.fibonacci import fibonacci_dp, fibonacci_recursive
 class test_math(unittest.TestCase):
 
     def test_factorial(self):
+        self.assertEquals(factorial(0), 0)
+        self.assertEquals(factorial(1), 1)
         self.assertEquals(factorial(3), 6)
+        self.assertEquals(factorial(5), 120)
+        self.assertEquals(factorial(10), 3628800)
 
     def test_fibonacci_dp(self):
         self.assertEquals(fibonacci_dp(-1), 0)
