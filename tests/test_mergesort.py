@@ -1,5 +1,5 @@
 import unittest
-from sorts.Mergesort import Mergesort
+from sorts.mergesort import mergesort
 
 
 class test_mergesort_methods(unittest.TestCase):
@@ -9,7 +9,7 @@ class test_mergesort_methods(unittest.TestCase):
     sorted_list = [2, 3, 3, 4, 4, 4, 7, 8, 9, 12, 20, 24, 24, 39, 84, 99]
 
     def test_mergesort(self):
-        self.assertEqual(Mergesort.recursive_sort(self.random_list), self.sorted_list)
+        self.assertEqual(mergesort(self.random_list), self.sorted_list)
 
 
 if __name__ == '__main__':

@@ -1,48 +1,43 @@
-class Quicksort:
+def quicksort(ar:list):
+    """
+    Sort a list with quicksort algorithm.
 
-    def recursive_sort(list):
+    The quicksort algorithm splits a list into
+    two parts and recursively sorts those parts
+    by making swaps based on the elements value
+    in relation to the pivot value.  It is an 
+    O(n log(n)) sort.
 
-        def quicksort(list, low, high):
+    Args:
+        ar: list to sort.
 
-            # if the low/high indexes haven't flipped
-            if low < high:
+    Returns:
+        The input list sorted.
+    """
+    def sort(ar, lo, hi):
+        # if the two ends haven't swapped
+        if lo < hi:
+            # find the partition
+            partition_index = partition(ar, lo, hi)
+            # sort both sides
+            sort(ar, lo, partition_index - 1)
+            sort(ar, partition_index + 1, hi)
+    
+    def partition(ar, lo, hi):
+        # basic partition by using the high value as a pivot
+        pivot = ar[hi]
 
-                # partition index, which is sorted
-                partition_index = partition(list, low, high)
+        # the value being examined 
+        i = lo
+        for j in range(lo, hi):
+            # 
+            if ar[j] <= pivot:
+                ar[i], ar[j] = ar[j], ar[i]
+                i += 1
+        ar[i], ar[hi] = ar[hi], ar[i]
 
-                # sort the low side
-                quicksort(list, low, partition_index - 1)
+        return i
+    
+    sort(ar, 0, len(ar)-1)
 
-                # sort the high side
-                quicksort(list, partition_index + 1, high)
-
-        def partition(list, low, high):
-
-            # set the pivot
-            pivot = list[high]
-
-            # index of low
-            i = low
-
-            for j in range(low, high):
-
-                # if current is smaller than pivot
-                if list[j] <= pivot:
-
-                    # swap i (less than pivot) and j (greater than pivot)
-                    list[i], list[j] = list[j], list[i]
-
-                    # move up the index
-                    i += 1
-
-            # swap the low index marker (i) and the pivot
-            list[i], list[high] = list[high], list[i]
-
-            return i
-
-        # sort
-        quicksort(list, 0, len(list)-1)
-
-        return list
-
-    recursive_sort = staticmethod(recursive_sort)
+    return ar

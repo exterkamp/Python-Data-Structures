@@ -1,5 +1,5 @@
 import unittest
-from searches.BinarySearch import BinarySearch
+from searches.binary_search import binary_search
 
 class test_binary_search(unittest.TestCase):
 
@@ -8,13 +8,13 @@ class test_binary_search(unittest.TestCase):
     unsorted_list = [7, 9, 3, 24, 84, 12, 4, 20, 39, 8, 2, 99]
 
     def test_binary_search(self):
-        self.assertEqual(BinarySearch.search(self.sorted_list, 9), 5)
+        self.assertEqual(binary_search(self.sorted_list, 9), 5)
     
     def test_binary_search_not_found(self):
-        self.assertEqual(BinarySearch.search(self.sorted_list, 10), -1)
+        self.assertEqual(binary_search(self.sorted_list, 10), -1)
     
     def test_binary_search_not_sorted(self):
-        self.assertEqual(BinarySearch.search(self.unsorted_list, 20), -1)
+        self.assertEqual(binary_search(self.unsorted_list, 20), -1)
 
 if __name__ == '__main__':
     unittest.main()
