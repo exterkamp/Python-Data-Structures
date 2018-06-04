@@ -9,14 +9,15 @@ Some test cases have been provided.  But they are not comprehensive.
 
 
 ### Sorting Algorithms
-* [Quicksort](sorts/Quicksort.py)
-* [Mergesort](sorts/Mergesort.py)
+* [Quicksort](sorts/quicksort.py)
+* [Mergesort](sorts/mergesort.py)
+* [Radixsort](sorts/radixsort.py)
 
 ### Searching Algorithms
-* [BinarySearch](searches/BinarySearch.py)
+* [BinarySearch](searches/binary_search.py)
 
 ### Data Structures
-* [LRU Cache](structures/LruCache.py)
+* [LRU Cache](structures/lru_cache.py)
 
 ### Algorithms
 
