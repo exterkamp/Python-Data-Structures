@@ -1,5 +1,7 @@
-<img src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg"/>
-<img src="https://img.shields.io/badge/python-%3E%3D3.6.4-blue.svg"/>
+<p>
+    <img src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg"/>
+    <img src="https://img.shields.io/badge/python-%3E%3D3.6.4-blue.svg"/>
+</p>
 
 # Python Data Structures
 
