@@ -10,7 +10,7 @@ class LruTests(unittest.TestCase):
 
     CONST_HELLO_2 = 'hello 2'
 
-    CONST_BANG = '!'
+    CONST_BAM = '!'
 
     def test_LRU_simple(self):
         cache = LruCache(2)
@@ -25,9 +25,11 @@ class LruTests(unittest.TestCase):
 
         cache.get(1)
 
-        cache.put(3, self.CONST_BANG)
+        cache.put(3, self.CONST_BAM)
 
         self.assertEqual(cache.get(2), -1)
+
+        cache.put(3, self.CONST_BAM)
 
     def test_LRU_bad_input(self):
         capacity = 0

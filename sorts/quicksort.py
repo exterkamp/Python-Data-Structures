@@ -34,6 +34,7 @@ def quicksort(ar:list):
             if ar[j] <= pivot:
                 ar[i], ar[j] = ar[j], ar[i]
                 i += 1
+        # swap the pivot into place
         ar[i], ar[hi] = ar[hi], ar[i]
 
         return i

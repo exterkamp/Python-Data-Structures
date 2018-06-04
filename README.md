@@ -1,3 +1,6 @@
+<img src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg"/>
+<img src="https://img.shields.io/badge/python-%3E%3D3.6.4-blue.svg"/>
+
 # Python Data Structures
 
 This project is a repository of common computer science data
@@ -5,8 +8,18 @@ structures, sorting algorithms, and functions.  Comments have
 been provided to explain the classes' implementation and underlying
 logic.
 
-Some test cases have been provided.  But they are not comprehensive.  
+### Testing
 
+Running the test suite with [unittest](https://docs.python.org/3/library/unittest.html).
+```Bash
+$ python -m unittest discover tests
+```
+
+Running the test suite with coverage report with [coverage](http://coverage.readthedocs.io/en/latest/).
+```Bash
+$ coverage run -m unittest discover tests
+$ coverage report -m
+```
 
 ### Sorting Algorithms
 * [Quicksort](sorts/quicksort.py)
