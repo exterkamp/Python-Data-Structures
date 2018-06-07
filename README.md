@@ -33,6 +33,8 @@ $ coverage report -m
 
 ### Data Structures
 * [LRU Cache](structures/lru_cache.py)
+* [Naïve Tree](structures/naive_tree.py)
+* [Binary Search Tree](structures/binary_search_tree.py)
 
 ### Algorithms
 
