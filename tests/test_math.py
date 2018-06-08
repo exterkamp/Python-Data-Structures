@@ -24,6 +24,3 @@ class test_math(unittest.TestCase):
         self.assertEqual(fibonacci_recursive(1), 1)
         self.assertEqual(fibonacci_recursive(5), 5)
         self.assertEqual(fibonacci_recursive(12), 144)
-
-if __name__ == '__main__':
-    unittest.main()

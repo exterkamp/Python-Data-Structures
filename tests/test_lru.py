@@ -35,7 +35,3 @@ class LruTests(unittest.TestCase):
         capacity = 0
 
         self.assertRaises(ValueError, LruCache, capacity)
-
-
-if __name__ == '__main__':
-    unittest.main()

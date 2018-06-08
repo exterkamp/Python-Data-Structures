@@ -10,7 +10,3 @@ class test_quicksort_methods(unittest.TestCase):
 
     def test_radixsort(self):
         self.assertEqual(radixsort(self.random_list), self.sorted_list)
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -18,6 +18,3 @@ class test_bitwise(unittest.TestCase):
 
         # 111 and 1101 -> distance = 2
         self.assertEqual(hamming_distance(7, 13), 2)
-
-if __name__ == '__main__':
-    unittest.main()

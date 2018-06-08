@@ -8,28 +8,28 @@ class TreeTests(unittest.TestCase):
     def make_simple_tree(self):
         tree = NaiveBinaryTree()
 
-        tree.head = BinaryTreeNode(3)
+        tree.head = BinaryTreeNode(3, None)
 
-        tree.head.left = BinaryTreeNode(5)
+        tree.head.left = BinaryTreeNode(5, tree.head)
 
-        tree.head.right = BinaryTreeNode(7)
+        tree.head.right = BinaryTreeNode(7, tree.head)
 
         return tree
     
     def make_complex_tree(self):
         tree = NaiveBinaryTree()
 
-        tree.head = BinaryTreeNode(12)
+        tree.head = BinaryTreeNode(12, None)
 
-        tree.head.left = BinaryTreeNode(3)
+        tree.head.left = BinaryTreeNode(3, tree.head)
 
-        tree.head.right = BinaryTreeNode(6)
+        tree.head.right = BinaryTreeNode(6, tree.head)
 
-        tree.head.left.right = BinaryTreeNode(8)
+        tree.head.left.right = BinaryTreeNode(8, tree.head.left)
 
-        tree.head.right.right = BinaryTreeNode(2)
+        tree.head.right.right = BinaryTreeNode(2, tree.head.right)
 
-        tree.head.left.right.right = BinaryTreeNode(17)
+        tree.head.left.right.right = BinaryTreeNode(17, tree.head.left.right)
 
         return tree
     
@@ -68,6 +68,3 @@ class TreeTests(unittest.TestCase):
         tree = self.make_simple_tree()
         
         self.assertEqual('[3, 5, 7]', tree.__str__())
-
-if __name__ == '__main__':
-    unittest.main()

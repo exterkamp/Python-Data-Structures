@@ -10,7 +10,3 @@ class test_mergesort_methods(unittest.TestCase):
 
     def test_mergesort(self):
         self.assertEqual(mergesort(self.random_list), self.sorted_list)
-
-
-if __name__ == '__main__':
-    unittest.main()

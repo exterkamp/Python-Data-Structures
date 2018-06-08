@@ -15,6 +15,3 @@ class test_binary_search(unittest.TestCase):
     
     def test_binary_search_not_sorted(self):
         self.assertEqual(binary_search(self.unsorted_list, 20), -1)
-
-if __name__ == '__main__':
-    unittest.main()
