@@ -1,16 +1,38 @@
 class HashMap():
+    """
+    Data structure that stores key:value pairs.
+    """
 
     def __init__(self, buckets=256, hash_function=lambda key: hash(key)):
         self.buckets = [[] for i in range(buckets)]
         self.hash_function = hash_function
     
     def insert(self, key, value):
+        """
+        Insert a key into the hash map.
+
+        Insert a key into the map.  Internally the
+        key is hashed with the internal hashing_function
+        and placed into a bucket.  If the bucket  contains
+        an element with the same key that keys value 
+        will be overridden.
+
+        Args:
+            key: the key that will be hashed to index 
+                the value 
+            value: the value that will be stored at
+                the index of 'key'
+
+        Returns:
+            None 
+        """
+        # hash the key and map that hash to a bucket
         hash_key = self.hash_function(key) % len(self.buckets)
 
         bucket = self.buckets[hash_key]
 
         for i, val in enumerate(bucket):
-            # check if exists, and override
+            # check if exists, and override if so
             if val[0] == key:
                 bucket[i] = (key, value)
                 return
@@ -18,25 +40,55 @@ class HashMap():
         bucket.append((key, value))
 
     def get(self, key):
+        """
+        Get a value from the map.
+
+        Args:
+            key: the identifying key which will have its
+                value returned
+        
+        Returns:
+            The value that is stored within key.
+
+        Raises:
+            KeyError: Raised when key cannot be found.
+        """
+        # hash the key and map that hash to a bucket
         hash_key = self.hash_function(key) % len(self.buckets)
 
         bucket = self.buckets[hash_key]
 
+        # find that key in the bucket
         for val in bucket:
             if val[0] == key:
                 return val[1]
-        # not found
+        
         raise KeyError
     
     def delete(self, key):
-        hash_key = hash(key) % len(self.buckets)
+        """
+        Delete a key from the map.
+
+        Args:
+            key: the key to delete
+        
+        Returns:
+            The value of the key that was deleted.
+
+        Raises:
+            KeyError: Raised when the key cannot be found.
+        """
+        # hash the key and map that hash to a bucket
+        hash_key = self.hash_function(key) % len(self.buckets)
 
         bucket = self.buckets[hash_key]
 
+        # find the key in the bucket, delete it, and return it
         for i, val in enumerate(bucket):
             if val[0] == key:
                 del bucket[i]
                 return val
+        
         raise KeyError
 
 def djb2(key):
