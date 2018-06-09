@@ -39,6 +39,7 @@ $ coverage report -m
   * [DJB2 Hash Function](structures/hash_map.py)
   * [SDBM Hash Function](structures/hash_map.py)
   * [Lose/Lose Hash Function](structures/hash_map.py)
+* [Heap](structures/heap.py)
 
 ### Algorithms
 
