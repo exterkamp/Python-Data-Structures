@@ -1,5 +1,5 @@
 import unittest
-from structures.hash_map import HashMap
+from structures.hash_map import HashMap, djb2, sdbm, lose_lose
 
 
 class TestHashMap(unittest.TestCase):
@@ -61,3 +61,37 @@ class TestHashMap(unittest.TestCase):
         
         with self.assertRaises(KeyError):
             hash_map.delete(1)
+
+    def test_djb2(self):
+
+        self.assertEqual(210714636441, djb2('hello'))
+
+        hash_map = HashMap(hash_function=djb2)
+
+        hash_map.insert('hello', 'world')
+
+        self.assertEqual('world',hash_map.get('hello'))
+
+        self.assertEqual([('hello','world')], hash_map.buckets[djb2('hello') % len(hash_map.buckets)])
+    
+    def test_sdbm(self):
+        self.assertEqual(1925877435333486942514, sdbm('hello'))
+
+        hash_map = HashMap(hash_function=sdbm)
+
+        hash_map.insert('hello', 'world')
+
+        self.assertEqual('world', hash_map.get('hello'))
+
+        self.assertEqual([('hello','world')], hash_map.buckets[sdbm('hello') % len(hash_map.buckets)])
+    
+    def test_lose_lose(self):
+        self.assertEqual(532, lose_lose('hello'))
+
+        hash_map = HashMap(hash_function=lose_lose)
+
+        hash_map.insert('hello', 'world')
+
+        self.assertEqual('world', hash_map.get('hello'))
+
+        self.assertEqual([('hello','world')], hash_map.buckets[lose_lose('hello') % len(hash_map.buckets)])

@@ -36,6 +36,9 @@ $ coverage report -m
 * [Naïve Tree](structures/naive_tree.py)
 * [Binary Search Tree](structures/binary_search_tree.py)
 * [Hash Map](structures/hash_map.py)
+  * [DJB2 Hash Function](structures/hash_map.py)
+  * [SDBM Hash Function](structures/hash_map.py)
+  * [Lose/Lose Hash Function](structures/hash_map.py)
 
 ### Algorithms
 
