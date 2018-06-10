@@ -8,8 +8,7 @@ def permutations_of_word(string: str):
             permute.list.append(current)
             return
         for i in range(0,len(remaining)):
-            remaining_minus = remaining[0:i] + remaining[i+1:]
-            permute(current + remaining[i], remaining_minus)
+            permute(current + remaining[i], remaining[:i] + remaining[i+1:])
 
     permute.list = []
     permute('', list(string))

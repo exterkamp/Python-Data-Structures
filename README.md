@@ -61,3 +61,5 @@ Different algorithmic programs.  Grouped by general topic.
 * [Fizz Buzz](algorithms/string/fizz_buzz.py)
 * [Permutations](algorithms/string/permutations.py)
 * [Combinations](algorithms/string/combinations.py)
+  * [Letters in Word](algorithms/string/combinations.py)
+  * [Letters from Phone](algorithms/string/combinations.py)
