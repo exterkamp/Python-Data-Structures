@@ -59,3 +59,5 @@ Different algorithmic programs.  Grouped by general topic.
 
 #### String Based Algorithms
 * [Fizz Buzz](algorithms/string/fizz_buzz.py)
+* [Permutations](algorithms/string/permutations.py)
+* [Combinations](algorithms/string/combinations.py)
