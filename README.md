@@ -52,6 +52,9 @@ Different algorithmic programs.  Grouped by general topic.
 * [Hamming Distance](algorithms/bitwise/operations.py)
 * [Hamming Weight](algorithms/bitwise/operations.py)
 
-#### Mathematical Algortihms
+#### Mathematical Algorithms
 * [Fibonacci](algorithms/math/fibonacci.py)
 * [Factorial](algorithms/math/factorial.py)
+
+#### String Based Algorithms
+* [Fizz Buzz](algorithms/string/fizz_buzz.py)
