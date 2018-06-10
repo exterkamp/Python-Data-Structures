@@ -43,6 +43,7 @@ $ coverage report -m
   * [SDBM Hash Function](structures/hash_map.py)
   * [Lose/Lose Hash Function](structures/hash_map.py)
 * [Heap](structures/heap.py)
+* [Trie](structures/trie.py)
 
 ### Algorithms
 
