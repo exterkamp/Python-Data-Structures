@@ -30,6 +30,8 @@ $ coverage report -m
 
 ### Searching Algorithms
 * [BinarySearch](searches/binary_search.py)
+* [Breadth First Search](searches/breadth_first_search.py)
+  * [2D Grid BFS](searches/breadth_first_search.py)
 
 ### Data Structures
 * [LRU Cache](structures/lru_cache.py)
