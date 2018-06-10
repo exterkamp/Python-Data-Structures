@@ -37,7 +37,35 @@ def breadth_first_search(grid, start, target):
                 return coor
             else:
                 if coor not in visited:
-                    queue = [coor] + queue
+                    queue.insert(0, coor)
                     visited.add(current)
+    return None
+
+def breadth_first_search_graph(head, target):
+    """
+    Search a graph for a target value.
+
+    Args:
+        head: pointer to node in the graph
+        targer: the target value to find
+    
+    Returns:
+        Node which has value = target.
+    """
+    visited = set([head])
+    queue = [head]
+    
+    while queue:
+        current = queue.pop()
+
+        for adjacent in current.adjacent_list:
+            if adjacent in visited:
+                continue
+            
+            if adjacent.val == target:
+                return adjacent
+            else:
+                queue.insert(0, adjacent)
+                visited.add(adjacent)
     return None
 
