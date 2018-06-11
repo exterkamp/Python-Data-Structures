@@ -63,3 +63,6 @@ Different algorithmic programs.  Grouped by general topic.
 * [Combinations](algorithms/string/combinations.py)
   * [Letters in Word](algorithms/string/combinations.py)
   * [Letters from Phone](algorithms/string/combinations.py)
+* [Longest Common Prefix](algorithms/string/longest_common_prefix.py)
+  * [Trie](algorithms/string/longest_common_prefix.py)
+  * [Reduce](algorithms/string/longest_common_prefix.py)
