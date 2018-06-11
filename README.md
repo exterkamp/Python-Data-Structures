@@ -50,8 +50,9 @@ $ coverage report -m
 Different algorithmic programs.  Grouped by general topic.
 
 #### Bitwise Algorithms
-* [Hamming Distance](algorithms/bitwise/operations.py)
-* [Hamming Weight](algorithms/bitwise/operations.py)
+* [Hamming Distance](algorithms/bitwise/hamming_ops.py)
+* [Hamming Weight](algorithms/bitwise/hamming_ops.py)
+* [Binary Complement](algorithms/bitwise/complement.py)
 
 #### Mathematical Algorithms
 * [Fibonacci](algorithms/math/fibonacci.py)

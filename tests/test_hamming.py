@@ -1,5 +1,5 @@
 import unittest
-from algorithms.bitwise.operations import hamming_distance, hamming_weight
+from algorithms.bitwise.hamming_ops import hamming_distance, hamming_weight
 
 class test_bitwise(unittest.TestCase):
 
