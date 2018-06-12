@@ -13,15 +13,48 @@ class GraphNode():
         self.adjacent_list.remove(node)
 
 class Graph():
+    """
+    A directed graph represented with an adjacency list.
+    """
 
     def __init__(self, verticies):
         self.graph = defaultdict(list)
         self.verticies = verticies
     
     def add_edge(self, source, destination):
+        """
+        Add an edge to the graph.
+
+        Add an edge pointing from source vertex
+        to destination vertex.
+
+        Args:
+            source: the source vertex
+            destination: the destination vertex
+
+        """
         self.graph[source].append(destination)
 
     def topological_sort(self):
+        """
+        Sort the graph topologically.
+
+        A topological sort lists nodes in such a way
+        that every node 's' in 's' -> 'd' directed pairs
+        is listed before 'd.'  This will not work in a 
+        graph that contains cycles.
+
+        The algorithm looks at every node, and does a
+        dfs for each node adjacent to the node and then adds
+        the originating node to a stack.  In the end, the stack
+        will be in order of a possible topological sort.
+
+        Topological sorts are not necessarily unique.
+
+        Returns:
+            A list of vertices in a topological ordering.
+
+        """
         visited = set()
         stack = []
 
