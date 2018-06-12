@@ -45,6 +45,7 @@ $ coverage report -m
   * [Lose/Lose Hash Function](structures/hash_map.py)
 * [Heap](structures/heap.py)
 * [Trie](structures/trie.py)
+* [Priority Queue](structures/priority_queue.py)
 
 ### Algorithms
 
