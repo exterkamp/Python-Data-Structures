@@ -46,7 +46,8 @@ class Graph():
 
         The algorithm looks at every node, and does a
         dfs for each node adjacent to the node and then adds
-        the originating node to a stack.  In the end, the stack
+        the originating node to a stack once all adjacent
+        nodes have been searched.  In the end, the stack
         will be in order of a possible topological sort.
 
         Topological sorts are not necessarily unique.
