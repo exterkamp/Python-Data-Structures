@@ -27,6 +27,7 @@ $ coverage report -m
 * [Quicksort](sorts/quicksort.py)
 * [Mergesort](sorts/mergesort.py)
 * [Radixsort](sorts/radixsort.py)
+* [Heapsort](sorts/heapsort.py)
 
 ### Searching Algorithms
 * [BinarySearch](searches/binary_search.py)
