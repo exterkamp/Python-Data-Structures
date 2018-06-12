@@ -38,6 +38,9 @@ $ coverage report -m
 ### Data Structures
 * [LRU Cache](structures/lru_cache.py)
 * [Naïve Tree](structures/naive_tree.py)
+  * [In-Order Traversal](structures/naive_tree.py)
+  * [Pre-Order Traversal](structures/naive_tree.py)
+  * [Post-Order Traversal](structures/naive_tree.py)
 * [Binary Search Tree](structures/binary_search_tree.py)
 * [Hash Map](structures/hash_map.py)
   * [DJB2 Hash Function](structures/hash_map.py)
@@ -46,6 +49,9 @@ $ coverage report -m
 * [Heap](structures/heap.py)
 * [Trie](structures/trie.py)
 * [Priority Queue](structures/priority_queue.py)
+* [Linked List](structures/linked_list.py)
+  * [Contains Cycles](structures/linked_list.py)
+  * [Find Start of Cycle](structures/linked_list.py)
 
 ### Algorithms
 
