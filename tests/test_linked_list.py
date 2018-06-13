@@ -54,3 +54,27 @@ class TestLinkedList(unittest.TestCase):
     
     def test_ll_get_cycle_start_on_single_node(self):
         self.assertEqual(None, ListNode(1).get_beginning_of_cycle_if_exists())
+    
+    def test_reverse(self):
+        head = ListNode(1)
+        head.next = ListNode(2)
+        head.next.next = ListNode(3)
+        self.assertEqual(1, head.val)
+        self.assertEqual(2, head.next.val)
+        self.assertEqual(3, head.next.next.val)
+        head = head.reverse()
+        self.assertEqual(3, head.val)
+        self.assertEqual(2, head.next.val)
+        self.assertEqual(1, head.next.next.val)
+    
+    def test_reverse_recursive(self):
+        head = ListNode(1)
+        head.next = ListNode(2)
+        head.next.next = ListNode(3)
+        self.assertEqual(1, head.val)
+        self.assertEqual(2, head.next.val)
+        self.assertEqual(3, head.next.next.val)
+        head = head.reverse_recursive()
+        self.assertEqual(3, head.val)
+        self.assertEqual(2, head.next.val)
+        self.assertEqual(1, head.next.next.val)
