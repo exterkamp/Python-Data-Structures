@@ -53,6 +53,8 @@ $ coverage report -m
 * [Linked List](structures/linked_list.py)
   * [Contains Cycles](structures/linked_list.py)
   * [Find Start of Cycle](structures/linked_list.py)
+* [Graph](structures/graph.py)
+  * [Detect Cycle](structures/graph.py)
 
 ### Algorithms
 

@@ -35,6 +35,45 @@ class Graph():
         """
         self.graph[source].append(destination)
 
+    def has_cycle(self):
+        """
+        Detect if a graph has a cycle.
+
+        Returns:
+            True if the graph has a cycle and
+            False if the graph is acyclic.
+
+        """
+
+        visited = [0] * self.verticies
+
+        def valid(node):
+            # print(visited, node)
+            if visited[node] == -1:
+                return False
+            elif visited[node] == 1:
+                return True
+            visited[node] = -1
+            for neighbor in self.graph[node]:
+                if not valid(neighbor):
+                    return False
+            return True
+
+        for node in range(self.verticies):
+            # dfs from each, mark as -1 when visited
+            # after dfs set all -1 -> 1
+            # cancel if find a 1, as its already been explored
+            if not visited[node]:
+                # print(visited)
+                if valid(node):
+                    # set all -1 to 1
+                    visited = list(map(lambda x: abs(x),visited))
+                else:
+                    # cycle!
+                    return True
+        # no cycle available
+        return False
+
     def topological_sort(self):
         """
         Sort the graph topologically.
