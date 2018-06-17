@@ -79,3 +79,4 @@ Different algorithmic programs.  Grouped by general topic.
   * [Trie](algorithms/string/longest_common_prefix.py)
   * [Reduce](algorithms/string/longest_common_prefix.py)
 * [Finding Substring](algorithms/string/rabin_karp_substring_search.py)
+  * [Rabin-Karp](algorithms/string/rabin_karp_substring_search.py)

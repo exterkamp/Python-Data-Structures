@@ -1,10 +1,19 @@
-def rabin_karp_find_substring(string, substring, base=256):
+def rabin_karp_find_substring(string, substring, base=256, prime_modulus=487):
     """
     Finds occurances of a substring in a string.
+
+    This uses the Rabin-Karp rolling hash to calculate a rolling hash
+    value for windows of letters in the string.  Since this is a rolling
+    hash when going to a new number we can drop the number that will not
+    be in the next window and add the new one to the hash.  Once the
+    hashes are the same there is a candidate match and the strings must be
+    examined letter by letter in case of hash collision.
 
     Args:
         string: the string that is being looked in
         substring: the string to search for
+        base: the base used to calculate hashes
+        prime_modulus: positive prime number used to bound the hash results 
 
     Returns:
         Index of the beginning of the first occurance
@@ -14,12 +23,13 @@ def rabin_karp_find_substring(string, substring, base=256):
     # substring hash
     substring_hash = 0
     rolling_hash = 0
+    base_n = pow(base,len(substring)-1)%prime_modulus
 
     # get the initial hashes
     for i in range(len(substring)):
-        rolling_hash = rolling_hash_ord(rolling_hash, base, len(substring) - i - 1, additional_element=string[i])
-        substring_hash = rolling_hash_ord(substring_hash, base, len(substring) - i - 1, additional_element=substring[i])
-    
+        rolling_hash = (base * rolling_hash + ord(string[i]))%prime_modulus
+        substring_hash = (base * substring_hash + ord(substring[i]))%prime_modulus
+
     for i in range(len(string) - len(substring)+1):
         # check if hash matches hash of substring
         if rolling_hash == substring_hash:
@@ -30,15 +40,11 @@ def rabin_karp_find_substring(string, substring, base=256):
             else:
                 return i
         # recalulate hash
-        if i+len(substring) <= len(string) - 1:
-            rolling_hash = rolling_hash_ord(rolling_hash, base, len(substring)-1, removal_element=string[i], additional_element=string[i+len(substring)])
-    return -1
+        if i < len(string) - len(substring):
+            # remove the ith number and add the i+len(substring)th number
+            rolling_hash = ((rolling_hash - (base_n * ord(string[i]))) * base) + ord(string[i + len(substring)])%prime_modulus
+            
+            # make sure t >= 0
+            rolling_hash = (rolling_hash + prime_modulus) % prime_modulus
 
-def rolling_hash_ord(previous_hash, base, length, removal_element=None, additional_element=None):
-    if removal_element and additional_element:
-        previous_hash -= ord(removal_element) * (base ** length)
-        previous_hash *= base
-        previous_hash += ord(additional_element)
-    elif additional_element:
-        previous_hash += ord(additional_element) * (base ** length)
-    return previous_hash
+    return -1
