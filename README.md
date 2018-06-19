@@ -55,6 +55,7 @@ $ coverage report -m
   * [Find Start of Cycle](structures/linked_list.py)
 * [Graph](structures/graph.py)
   * [Detect Cycle](structures/graph.py)
+* [Fenwick Tree](structures/fenwick_tree.py)
 
 ### Algorithms
 
