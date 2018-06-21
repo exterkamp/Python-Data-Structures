@@ -35,6 +35,7 @@ $ coverage report -m
 * [Breadth First Search](searches/breadth_first_search.py)
   * [2D Grid BFS](searches/breadth_first_search.py)
   * [Graph BFS](searches/breadth_first_search.py)
+* [Finding Duplicates](searches/find_duplicates.py)
 
 ### Data Structures
 * [LRU Cache](structures/lru_cache.py)
