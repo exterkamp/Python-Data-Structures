@@ -111,4 +111,45 @@ class Graph():
                 dfs(i)
         
         return stack
+
+class WeightedGraphNode():
+
+    def __init__(self, val):
+        self.val = val
+        self.adjacent = {}
     
+    def __str__(self):
+        return str(self.val) + ' adjacent: ' + str([x for x in self.adjacent])
+
+    def add_adjacent(self, node, weight=0):
+        self.adjacent[node] = weight
+    
+    def remove_adjacent(self, node):
+        del self.adjacent[node]
+
+class WeightedGraph():
+
+    def __init__(self):
+        self.vertices = {}
+    
+    def __str__(self):
+        return ", ".join([node.__str__() for node in self.vertices.values()])
+    
+    def add_vertex(self, val):
+        vertex = WeightedGraphNode(val)
+        self.vertices[val] = vertex
+    
+    def add_edge(self, src, dst, weight=0):
+        if src not in self.vertices:
+            self.add_vertex(src)
+        if dst not in self.vertices:
+            self.add_vertex(dst)
+        self.vertices[src].add_adjacent(dst, weight)
+    
+    def remove_edge(self, src, dst):
+        if src not in self.vertices:
+            return
+        if dst not in self.vertices:
+            return
+        if dst in self.vertices[src].adjacent:
+            self.vertices[src].remove_adjacent(dst)

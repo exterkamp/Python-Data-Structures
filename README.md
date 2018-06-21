@@ -36,6 +36,7 @@ $ coverage report -m
   * [2D Grid BFS](searches/breadth_first_search.py)
   * [Graph BFS](searches/breadth_first_search.py)
 * [Finding Duplicates](searches/find_duplicates.py)
+* [Dijkstra's Pathfinding](searches/dijkstras.py)
 
 ### Data Structures
 * [LRU Cache](structures/lru_cache.py)
@@ -56,6 +57,8 @@ $ coverage report -m
   * [Find Start of Cycle](structures/linked_list.py)
 * [Graph](structures/graph.py)
   * [Detect Cycle](structures/graph.py)
+  * [Directed](structures/graph.py)
+  * [Directed Weighted](structures/graph.py)
 * [Fenwick Tree](structures/fenwick_tree.py)
 
 ### Algorithms
