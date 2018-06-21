@@ -12,8 +12,8 @@ class TestFindDuplicates(unittest.TestCase):
         self.assertNotEqual([1,2,3], duplicates_pre_sorted([5,7,1,9,2,10,3],[4,90,23,1,53,3,2,22]))
 
     def test_bin_search(self):
-        self.assertEqual([1,2,3], duplicates_linear([1,2,3,4,5,6],[1,2,3,7,8,9]))
-        self.assertEqual([1,2,3], duplicates_linear([1,2,3,4,5,6],[1,2,3,7,8,9,10,11,12,13,14,15]))
+        self.assertEqual([1,2,3], duplicates_bin_search([1,2,3,4,5,6],[1,2,3,7,8,9]))
+        self.assertEqual([1,2,3], duplicates_bin_search([1,2,3,4,5,6],[1,2,3,7,8,9,10,11,12,13,14,15]))
     
     def test_bin_search_second_shorter(self):
-        self.assertEqual([1,2,3], duplicates_linear([1,2,3,7,8,9,10,11,12,13,14,15],[1,2,3,4,5,6]))
+        self.assertEqual([1,2,3], duplicates_bin_search([1,2,3,7,8,9,10,11,12,13,14,15],[1,2,3,4,5,6]))

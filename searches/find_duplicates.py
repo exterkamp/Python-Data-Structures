@@ -42,7 +42,7 @@ def duplicates_bin_search(arr1, arr2):
     output = []
 
     for element in arr1:
-        if binary_search(arr2, element) > 0:
+        if binary_search(arr2, element) >= 0:
             output.append(element)
 
     return output
