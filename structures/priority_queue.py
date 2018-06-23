@@ -16,12 +16,21 @@ class PriorityQueue():
             self.remove_task(task)
         count = next(self.counter)
         entry = [priority, count, task]
-        self.mapper [task] = entry
+        self.mapper[task] = entry
         heappush(self.pq, entry)
     
     def remove_task(self, task):
         entry = self.mapper.pop(task)
         entry[-1] = self.REMOVED
+    
+    def set_priority(self, task, priority=None):
+        if task in self.mapper:
+            entry = self.mapper.pop(task)
+
+            if not priority:
+                priority = min(0, entry[0] - 1)
+
+            self.add_task(entry[2], priority)
 
     def pop_task(self):
         while self.pq:
