@@ -49,3 +49,23 @@ class BinarySearchTree():
                 recur(node.right)
         recur(self.head)
         return output
+
+    def merge(self, tree):
+
+        def mergeOntoT1(t1, t2):
+            if not t1:
+                return t2
+            if not t2:
+                return t1
+            
+            t1.value += t2.value
+            
+            # look left
+            t1.left = mergeOntoT1(t1.left, t2.left)
+            
+            # look right
+            t1.right = mergeOntoT1(t1.right, t2.right)
+            
+            return t1
+        
+        mergeOntoT1(self.head, tree.head)

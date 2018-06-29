@@ -66,3 +66,19 @@ class TreeTests(unittest.TestCase):
         self.assertEqual(None, tree.search(87))
 
         self.assertEqual(3, tree.search(3).value)
+
+    def test_merge(self):
+
+        tree = self.make_simple_tree()
+
+        tree2 = BinarySearchTree()
+
+        tree2.insert(5)
+        tree2.insert(9)
+        tree2.insert(10)
+
+        tree.merge(tree2)
+
+        self.assertEqual(17, tree.head.value)
+        self.assertEqual(27, tree.search(27).value)
+        self.assertEqual(42, tree.search(42).value)
