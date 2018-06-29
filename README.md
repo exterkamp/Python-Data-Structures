@@ -73,6 +73,7 @@ Different algorithmic programs.  Grouped by general topic.
 #### Mathematical Algorithms
 * [Fibonacci](algorithms/math/fibonacci.py)
 * [Factorial](algorithms/math/factorial.py)
+* [Convert Base](algorithms/math/convert_base.py)
 
 #### String Based Algorithms
 * [Fizz Buzz](algorithms/string/fizz_buzz.py)
