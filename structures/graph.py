@@ -104,13 +104,13 @@ class Graph():
                 if i not in visited:
                     dfs(i)
             
-            stack.insert(0, vertex)
+            stack.append(vertex)
         
         for i in range(self.verticies):
             if i not in visited:
                 dfs(i)
         
-        return stack
+        return stack[::-1]
 
 class WeightedGraphNode():
 
