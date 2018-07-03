@@ -15,7 +15,7 @@ class TestGraphTopoSort(unittest.TestCase):
 
         graph.add_edge(3,1)
 
-        self.assertEqual([5, 4, 2, 3, 1, 0], graph.topological_sort())
+        self.assertEqual([4, 5, 0, 2, 3, 1], graph.topological_sort())
 
 
 

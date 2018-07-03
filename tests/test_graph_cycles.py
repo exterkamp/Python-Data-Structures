@@ -3,6 +3,17 @@ from structures.graph import Graph
 
 class TestCycle(unittest.TestCase):
 
+    def test_non_int(self):
+
+        graph = Graph(4)
+
+        graph.add_edge('Tampa','Colorado')
+        graph.add_edge('Colorado','Las Vegas')
+        graph.add_edge('Las Vegas', 'Seattle')
+        graph.add_edge('Seattle','Anchorage')
+
+        self.assertEqual(['Tampa', 'Colorado', 'Las Vegas', 'Seattle', 'Anchorage'], graph.topological_sort())
+
     def test_cycles_true(self):
 
         graph = Graph(4)
@@ -60,3 +71,11 @@ class TestCycle(unittest.TestCase):
         graph.add_edge(2,3)
 
         self.assertEqual(False, graph.has_cycle())
+
+    def test_too_many_verticies_error(self):
+
+        graph = Graph(1)
+
+        graph.add_edge(0,1)
+        with self.assertRaises(IndexError):
+            graph.add_edge(1,2)

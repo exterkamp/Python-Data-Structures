@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, deque
 
 class GraphNode():
 
@@ -18,7 +18,7 @@ class Graph():
     """
 
     def __init__(self, verticies):
-        self.graph = defaultdict(list)
+        self.graph = {}
         self.verticies = verticies
     
     def add_edge(self, source, destination):
@@ -33,7 +33,16 @@ class Graph():
             destination: the destination vertex
 
         """
-        self.graph[source].append(destination)
+        if len(self.graph) > self.verticies:
+            raise IndexError("Too many verticies in graph.")
+        
+        if source in self.graph:
+            self.graph[source].append(destination)
+        else:
+            self.graph[source] = [destination]
+        
+        if destination not in self.graph:
+            self.graph[destination] = []
 
     def has_cycle(self):
         """
@@ -96,21 +105,21 @@ class Graph():
 
         """
         visited = set()
-        stack = []
+        stack = deque()
 
         def dfs(vertex):
             visited.add(vertex)
-            for i in self.graph[vertex]:
-                if i not in visited:
-                    dfs(i)
+            for j in self.graph[vertex]:
+                if j not in visited:
+                    dfs(j)
             
-            stack.append(vertex)
+            stack.appendleft(vertex)
+
+        for key, _ in self.graph.items():
+            if key not in visited:
+                dfs(key)
         
-        for i in range(self.verticies):
-            if i not in visited:
-                dfs(i)
-        
-        return stack[::-1]
+        return list(stack)
 
 class WeightedGraphNode():
 
