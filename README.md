@@ -35,6 +35,8 @@ $ coverage report -m
 * [Breadth First Search](searches/breadth_first_search.py)
   * [2D Grid BFS](searches/breadth_first_search.py)
   * [Graph BFS](searches/breadth_first_search.py)
+* [Depth First Search](searches/depth_first_search.py)
+  * [2D Grid DFS](searches/depth_first_search.py)
 * [Finding Duplicates](searches/find_duplicates.py)
 * [Dijkstra's Pathfinding](searches/dijkstras.py)
 
