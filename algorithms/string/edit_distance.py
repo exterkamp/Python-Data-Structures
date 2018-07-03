@@ -64,7 +64,7 @@ def calculate_edit_distance(str1, str2):
     
     # traceback
     current_pos = (len(str2)-1, len(str1)-1)
-    D,I,M,S = 'Delete','Insert','M','Substitute'
+    D,I,S = 'Delete','Insert','Substitute'
     trace_stack = []
     while parent[current_pos[0]][current_pos[1]] != -1:
         parent_val = parent[current_pos[0]][current_pos[1]]
