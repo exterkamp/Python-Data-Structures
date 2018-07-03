@@ -1,3 +1,5 @@
+from collections import deque
+
 def breadth_first_search(grid, start, target):
     """
     Search a 2d grid for a given target starting at start.
@@ -23,7 +25,7 @@ def breadth_first_search(grid, start, target):
 
     visited = set()
 
-    queue = [(x_start, y_start)]
+    queue = deque([(x_start, y_start)])
     visited.add((x_start, y_start))
     
     while queue:
@@ -37,7 +39,7 @@ def breadth_first_search(grid, start, target):
                 return coor
             else:
                 if coor not in visited:
-                    queue.insert(0, coor)
+                    queue.appendleft(coor)
                     visited.add(current)
     return None
 
