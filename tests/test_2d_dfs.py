@@ -1,7 +1,7 @@
 import unittest
 from searches.depth_first_search import depth_first_search
 
-class TestBFS(unittest.TestCase):
+class TestDFS(unittest.TestCase):
 
     def make_simple_grid(self):
         return [
