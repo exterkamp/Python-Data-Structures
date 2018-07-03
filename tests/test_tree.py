@@ -63,6 +63,16 @@ class TreeTests(unittest.TestCase):
 
         self.assertEqual([17,8,3,2,6,12], tree.post_order_traversal())
 
+    def test_level_oreder_traversal(self):
+
+        tree = self.make_simple_tree()
+
+        self.assertEqual([3, 5, 7], tree.level_order_traversal())
+
+        tree = self.make_complex_tree()
+
+        self.assertEqual([12,3,6,8,2,17], tree.level_order_traversal())
+
     def test_print(self):
         
         tree = self.make_simple_tree()

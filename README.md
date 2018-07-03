@@ -46,6 +46,7 @@ $ coverage report -m
   * [In-Order Traversal](structures/naive_tree.py)
   * [Pre-Order Traversal](structures/naive_tree.py)
   * [Post-Order Traversal](structures/naive_tree.py)
+  * [Level-Order Traversal](structures/naive_tree.py)
 * [Binary Search Tree](structures/binary_search_tree.py)
 * [Hash Map](structures/hash_map.py)
   * [DJB2 Hash Function](structures/hash_map.py)

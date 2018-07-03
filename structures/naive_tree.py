@@ -1,3 +1,5 @@
+from collections import deque
+
 class NaiveBinaryTree():
 
     def __init__(self):
@@ -39,4 +41,20 @@ class NaiveBinaryTree():
                 recur(node.right)
                 output.append(node.value)
         recur(self.head)
+        return output
+
+    def level_order_traversal(self):
+        output = []
+        queue = deque([self.head])
+
+        while queue:
+            output.extend(list(map(lambda n: n.value, list(queue))))
+            next_level = deque()
+            while queue:
+                current = queue.popleft()
+                if current.left:
+                    next_level.append(current.left)
+                if current.right:
+                    next_level.append(current.right)
+            queue = next_level
         return output
