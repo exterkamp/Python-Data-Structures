@@ -90,3 +90,4 @@ Different algorithmic programs.  Grouped by general topic.
 * [Finding Substring](algorithms/string/rabin_karp_substring_search.py)
   * [Rabin-Karp](algorithms/string/rabin_karp_substring_search.py)
 * [Calculate Edit Distance](algorithms/string/edit_distance.py)
+* [Generate Word Squares](algorithms/string/word_squares.py)
